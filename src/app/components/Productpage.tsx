@@ -132,7 +132,7 @@ const ProductPage = () => {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="flex-1">
               <blockquote className="text-2xl font-light mb-8 text-gray-300 leading-relaxed">
-                "Understated, but unforgettable. It likes it was made for me"
+                Understated, but unforgettable. It likes it was made for me
               </blockquote>
               <div className="text-lg">Random Woman</div>
               <div className="text-sm text-gray-500 mt-2">NY, USA</div>
