@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductPage = () => {
@@ -14,7 +14,7 @@ const ProductPage = () => {
   const testimonialRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Animation for info sections
+  
     sectionRefs.current.forEach((section, index) => {
       if (section) {
         gsap.from(section, {
@@ -31,7 +31,7 @@ const ProductPage = () => {
       }
     });
 
-    // Animation for testimonial
+   
     if (testimonialRef.current) {
       gsap.from(testimonialRef.current, {
         opacity: 0,
@@ -44,7 +44,7 @@ const ProductPage = () => {
         }
       });
 
-      // Animate the testimonial image separately
+      
       gsap.from(testimonialRef.current.querySelector("img"), {
         opacity: 0,
         scale: 0.8,
@@ -58,7 +58,7 @@ const ProductPage = () => {
       });
     }
 
-    // Clean up
+   
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -66,17 +66,17 @@ const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Product Title with animation */}
-      <h1 className="text-4xl md:text-5xl font-light mb-12 px-4 pt-12 text-center">
+     ]
+      <h1 className="text-4xl md:text-5xl font-light mb-12 px-4 pt-12 text-left mx-auto">
         Silhouette No. 1 – Vermilion
       </h1>
 
-      {/* Full width Product */}
+      ]
       <Product />
 
-      {/* Remaining sections constrained to max-w-6xl */}
+    ]
       <div className="max-w-6xl mx-auto px-4 mt-24">
-        {/* Enhanced Product Info Sections */}
+       
         <div className="space-y-12 mb-28 px-2">
           <div 
             ref={el => sectionRefs.current[0] = el}
@@ -121,7 +121,7 @@ const ProductPage = () => {
           </div>
         </div>
 
-        {/* Enhanced Testimonial with animation */}
+      
         <div 
           ref={testimonialRef}
           className="mb-32 px-2 bg-gradient-to-r from-transparent via-gray-900 to-transparent p-8 rounded-xl"
@@ -150,7 +150,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {/* Footer */}
+     
       <Footer />
     </div>
   );

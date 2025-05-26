@@ -90,13 +90,13 @@ const Footer = () => {
       className="border-t border-gray-800 pt-12 pb-16 px-6 bg-black"
     >
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-        {/* Brand Column */}
+      
         <div ref={el => columnsRef.current[0] = el}>
           <h3 className="text-xl font-light mb-6 text-white">Eclipse</h3>
           <div className="text-xs text-gray-400 mt-8 opacity-0">© Eclipse 2023</div>
         </div>
 
-        {/* Contact Column */}
+
         <div ref={el => columnsRef.current[1] = el}>
           <h4 className="text-sm text-gray-500 mb-4 uppercase tracking-wider">Contact</h4>
           <p className="text-sm text-gray-300 hover:text-white transition-colors duration-300">
@@ -104,7 +104,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Navigation Column */}
+        
         <div ref={el => columnsRef.current[2] = el}>
           <h4 className="text-sm text-gray-500 mb-4 uppercase tracking-wider">Navigation</h4>
           <div className="text-sm text-gray-300 space-y-3">
@@ -119,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Email & Scroll Button Column */}
+       
         <div 
           ref={el => columnsRef.current[3] = el}
           className="flex flex-col justify-between items-end"

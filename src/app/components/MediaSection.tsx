@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const MediaSection = () => {
@@ -12,7 +12,7 @@ const MediaSection = () => {
   const mediaItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Animation for the entire section
+
     gsap.from(sectionRef.current, {
       opacity: 0,
       y: 80,
@@ -23,7 +23,7 @@ const MediaSection = () => {
         toggleActions: "play none none none"
       },
       onComplete: () => {
-        // Staggered animations for individual media items
+     
         gsap.from(mediaItemsRef.current, {
           opacity: 0,
           y: 40,
@@ -34,7 +34,7 @@ const MediaSection = () => {
       }
     });
 
-    // Hover effects for all media items
+  
     mediaItemsRef.current.forEach(item => {
       if (item) {
         const mediaContent = item.querySelector('video, img');
@@ -74,7 +74,7 @@ const MediaSection = () => {
 
   return (
     <div className="px-8 pb-16" ref={sectionRef}>
-      {/* First Row */}
+     
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div 
           className="bg-gray-800 h-80 rounded-lg overflow-hidden relative group"
@@ -106,7 +106,7 @@ const MediaSection = () => {
         </div>
       </div>
 
-      {/* Second Row */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div 
           className="h-48 rounded-lg overflow-hidden relative group"
