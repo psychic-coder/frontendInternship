@@ -111,6 +111,7 @@ const Page = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
+                    aria-label="First Name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                   />
                 </div>
@@ -121,6 +122,7 @@ const Page = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
+                    aria-label="Last Name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                   />
                 </div>
@@ -133,6 +135,7 @@ const Page = () => {
                   name="streetAddress"
                   value={formData.streetAddress}
                   onChange={handleInputChange}
+                  aria-label="Street Address"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                 />
               </div>
@@ -145,6 +148,7 @@ const Page = () => {
                     name="aptNumber"
                     value={formData.aptNumber}
                     onChange={handleInputChange}
+                    aria-label="Apartment Number"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                   />
                 </div>
@@ -155,6 +159,7 @@ const Page = () => {
                     name="state"
                     value={formData.state}
                     onChange={handleInputChange}
+                    aria-label="State"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                   />
                 </div>
@@ -165,6 +170,7 @@ const Page = () => {
                     name="zip"
                     value={formData.zip}
                     onChange={handleInputChange}
+                    aria-label="Zip Code"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
                   />
                 </div>

@@ -78,7 +78,7 @@ const MediaSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div 
           className="bg-gray-800 h-80 rounded-lg overflow-hidden relative group"
-          ref={el => mediaItemsRef.current[0] = el}
+          ref={el => { mediaItemsRef.current[0] = el }}
         >
           <video
             autoPlay
@@ -93,7 +93,7 @@ const MediaSection = () => {
 
         <div 
           className="h-80 rounded-lg overflow-hidden relative group"
-          ref={el => mediaItemsRef.current[1] = el}
+          ref={el => { mediaItemsRef.current[1] = el }}
         >
           <Image
             src="/firstImage.jpg"
@@ -110,7 +110,7 @@ const MediaSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div 
           className="h-48 rounded-lg overflow-hidden relative group"
-          ref={el => mediaItemsRef.current[2] = el}
+          ref={el => { mediaItemsRef.current[2] = el }}
         >
           <Image
             src="/secondImage.jpg"
@@ -123,7 +123,7 @@ const MediaSection = () => {
 
         <div 
           className="h-48 rounded-lg overflow-hidden relative group"
-          ref={el => mediaItemsRef.current[3] = el}
+          ref={el => { mediaItemsRef.current[3] = el }}
         >
           <Image
             src="/thirdImage.jpg"
@@ -136,7 +136,7 @@ const MediaSection = () => {
 
         <div 
           className="h-48 rounded-lg relative bg-white group overflow-hidden"
-          ref={el => mediaItemsRef.current[4] = el}
+          ref={el => { mediaItemsRef.current[4] = el }}
         >
           <Image
             src="/fourthImage.jpg"

@@ -71,7 +71,7 @@ const ProductPage = () => {
         Silhouette No. 1 – Vermilion
       </h1>
 
-      ]
+    ]
       <Product />
 
     ]
@@ -79,7 +79,7 @@ const ProductPage = () => {
        
         <div className="space-y-12 mb-28 px-2">
           <div 
-            ref={el => sectionRefs.current[0] = el}
+            ref={el => { sectionRefs.current[0] = el }}
             className="border-b border-gray-800 pb-6 group"
           >
             <button className="w-full flex justify-between items-center">
@@ -93,7 +93,7 @@ const ProductPage = () => {
           </div>
           
           <div 
-            ref={el => sectionRefs.current[1] = el}
+            ref={el => { sectionRefs.current[1] = el }}
             className="border-b border-gray-800 pb-6 group"
           >
             <button className="w-full flex justify-between items-center">
@@ -107,7 +107,7 @@ const ProductPage = () => {
           </div>
           
           <div 
-            ref={el => sectionRefs.current[2] = el}
+            ref={el => { sectionRefs.current[2] = el }}
             className="border-b border-gray-800 pb-6 group"
           >
             <button className="w-full flex justify-between items-center">

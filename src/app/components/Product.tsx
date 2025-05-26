@@ -81,7 +81,7 @@ const Product = () => {
               <div
                 key={index}
                 className="relative overflow-hidden group w-60 h-80"
-                ref={(el) => (imageRefs.current[index] = el!)}
+                ref={(el) => { imageRefs.current[index] = el! }}
               >
                 <Image
                   src="/fifthImage.jpg"
