@@ -76,7 +76,7 @@ const Product = () => {
           </p>
 
          
-          <div className="flex flex-wrap gap-4 mb-8 w-full justify-between">
+          <div className="flex flex-wrap gap-4 mb-8 w-full md:justify-between justify-center items-center">
             {[1, 2, 3].map((_, index) => (
               <div
                 key={index}

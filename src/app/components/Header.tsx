@@ -23,7 +23,7 @@ const Header = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 ${
         isCartPage ? 'bg-transparent' : 'bg-black/70 backdrop-blur-md'
-      } flex justify-between items-center px-10 py-6 transition-colors duration-300 px-32`}
+      } flex justify-between items-center px-2 py-6 transition-colors duration-300 md:px-32`}
     >
       <div
         className="w-10 h-10 relative cursor-pointer "
