@@ -1,15 +1,24 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+ const router=useRouter();
+   const config = {
+    withCredentials: true,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     streetAddress: "",
-    aptNumber: "",
+    phone: "",
     state: "",
-    zip: ""
+    pincode: ""
   });
 
   const headerRef = useRef(null);
@@ -53,18 +62,40 @@ const Page = () => {
     }));
   };
 
-  const handleSaveAddress = () => {
-    console.log("Saving address:", formData);
+  const handleSaveAddress = async () => {
+    
+    console.log(formData);
+    try {
+      const payload = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phone: formData.phone,
+        address: `${formData.streetAddress}`,
+        pincode: formData.pincode,
+        state: formData.state,
+      };
+  
+      const { data } = await axios.post("http://localhost:4000/api/user/register", payload,config);
+  
+      if (data.success) {
+        alert("Product Ordered successfully!");
+        router.push("/");
+        
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Registration failed.");
+    }
   };
-
+  
   const handleCancel = () => {
     setFormData({
       firstName: "",
       lastName: "",
       streetAddress: "",
-      aptNumber: "",
+      phone: "",
       state: "",
-      zip: ""
+      pincode: ""
     });
   };
 
@@ -142,11 +173,11 @@ const Page = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-black mb-1">Apt Number</label>
+                  <label className="block text-sm font-medium text-black mb-1">Phone Number</label>
                   <input
                     type="text"
-                    name="aptNumber"
-                    value={formData.aptNumber}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     aria-label="Apartment Number"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
@@ -167,8 +198,8 @@ const Page = () => {
                   <label className="block text-sm font-medium text-black mb-1">Zip</label>
                   <input
                     type="text"
-                    name="zip"
-                    value={formData.zip}
+                    name="pincode"
+                    value={formData.pincode}
                     onChange={handleInputChange}
                     aria-label="Zip Code"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
