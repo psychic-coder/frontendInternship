@@ -1,55 +1,18 @@
 "use client";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { useState } from "react";
 
 const Product = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const sizes = ["XS", "S", "M", "L", "XL"];
   const router = useRouter();
 
-  const videoRef = useRef(null);
-  const imageRefs = useRef<HTMLDivElement[]>([]);
-  const textRef = useRef(null);
-  const priceRef = useRef(null);
-  const sizeRef = useRef(null);
-  const buttonGroupRef = useRef(null);
-
-  useEffect(() => {
-    gsap.from(videoRef.current, {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    gsap.from(imageRefs.current, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-    });
-
-    gsap.from([textRef.current, priceRef.current, sizeRef.current, buttonGroupRef.current], {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power2.out",
-    });
-  }, []);
-
   return (
     <div className="w-full bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        
-      
-        <div
-          className="aspect-square relative w-full overflow-hidden"
-          ref={videoRef}
-        >
+        <div className="aspect-square relative w-full overflow-hidden">
           <video
             autoPlay
             loop
@@ -62,53 +25,53 @@ const Product = () => {
           </video>
         </div>
 
-    
         <div className="flex flex-col w-full px-6 py-10 mx-auto">
-
-         
-          <p
-            ref={textRef}
-            className="text-lg font-light leading-relaxed text-black mb-8 transition-all duration-300 hover:text-gray-700"
-          >
+          <p className="text-lg font-light leading-relaxed text-black mb-8">
             A tailored composition in motion. Cut from structured wool with a
             sculpted shoulder and softened hem, this piece captures presence
             without force. Worn here in the stillness of a city in motion.
           </p>
 
-         
           <div className="flex flex-wrap gap-4 mb-8 w-full md:justify-between justify-center items-center">
-            {[1, 2, 3].map((_, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden group w-60 h-80"
-                ref={(el) => { imageRefs.current[index] = el! }}
-              >
-                <Image
-                  src="/fifthImage.jpg"
-                  alt={`Product detail ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 240px"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
-              </div>
-            ))}
+            <div className="relative overflow-hidden group w-60 h-80 rounded-md">
+              <Image
+                src="/fifthImage.jpg"
+                alt="Product detail 1"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden group w-60 h-80 rounded-md ">
+              <Image
+                src="/sixthImage.jpg"
+                alt="Product detail 2"
+                fill
+                priority
+                className="object-cover "
+              />
+            </div>
+
+            <div className="relative overflow-hidden group w-60 h-80 rounded-md">
+              <Image
+                src="/seventhImage.jpg"
+                alt="Product detail 3"
+                fill
+                priority
+                className="object-cover "
+              />
+            </div>
           </div>
 
-        
-          <div
-            className="bg-white text-black p-8 rounded-lg shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl"
-          >
-            
-            <div ref={priceRef} className="mb-8">
+          <div className="bg-white text-black p-8 rounded-lg shadow-lg border border-gray-100">
+            <div className="mb-8">
               <div className="text-4xl font-light tracking-tight">₹7,999</div>
               <div className="text-sm text-gray-500 mt-2">
                 MHP incl. of all taxes
               </div>
             </div>
 
-           
-            <div ref={sizeRef} className="mb-8">
+            <div className="mb-8">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-sm font-medium">
                   Please select a size
@@ -134,8 +97,7 @@ const Product = () => {
               </div>
             </div>
 
-           
-            <div ref={buttonGroupRef} className="flex gap-4">
+            <div className="flex gap-4">
               <button className="flex-1 py-4 border-2 border-black text-black text-sm font-medium hover:bg-gray-50 transition-all duration-300">
                 Add to Cart
               </button>

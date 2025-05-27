@@ -66,15 +66,15 @@ const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-     ]
+     
       <h1 className="text-4xl md:text-5xl font-light mb-12 px-4 pt-12 text-left mx-auto">
-        Silhouette No. 1 – Vermilion
+        Silhouette No. 1 - Vermilion
       </h1>
 
-    ]
+    
       <Product />
 
-    ]
+    
       <div className="max-w-6xl mx-auto px-4 mt-24">
        
         <div className="space-y-12 mb-28 px-2">
