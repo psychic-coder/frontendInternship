@@ -74,8 +74,8 @@ const Page = () => {
         pincode: formData.pincode,
         state: formData.state,
       };
-  
-      const { data } = await axios.post("http://localhost:4000/api/user/register", payload,config);
+      console.log(`${process.env.BACKEND_URL}/api/user/register`);
+      const { data } = await axios.post(`${process.env.BACKEND_URL}/api/user/register`, payload,config);
   
       if (data.success) {
         alert("Product Ordered successfully!");

@@ -78,7 +78,7 @@ const Page = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/api/wait/join",
+        `${process.env.BACKEND_URL}/api/wait/join`,
         {
           name,
           email,
